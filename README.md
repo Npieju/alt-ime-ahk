@@ -2,11 +2,12 @@
 
 ## 概要
 
-左右 Alt キーの空打ちで IME を OFF/ON する AutoHotKey スクリプトです。
+左右 Alt キーの空打ちで IME を OFF/ON する AutoHotkey v2 スクリプトです。
 
 * 左 Alt キーの空打ちで IME を「英数」に切り替え
 * 右 Alt キーの空打ちで IME を「かな」に切り替え
 * Alt キーを押している間に他のキーを打つと通常の Alt キーとして動作
+* `beatoraja.exe` がアクティブなときは Alt による IME 切り替えを停止
 
 ## 動作環境
 
