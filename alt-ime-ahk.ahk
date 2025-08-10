@@ -6,10 +6,13 @@
 ;
 ; Author:     karakaram   http://www.karakaram.com/alt-ime-on-off
 
-#Include IME.ahk
+#Requires AutoHotkey v2.0
+#Include "IME.ahk"
 
 ; Razer Synapseなど、キーカスタマイズ系のツールを併用しているときのエラー対策
-#MaxHotkeysPerInterval 350
+A_MaxHotkeysPerInterval := 350
+
+#HotIf !WinActive("ahk_exe beatoraja.exe")
 
 ; 主要なキーを HotKey に設定し、何もせずパススルーする
 *~a::
@@ -108,8 +111,8 @@
     Return
 
 ; 上部メニューがアクティブになるのを抑制
-*~LAlt::Send {Blind}{vk07}
-*~RAlt::Send {Blind}{vk07}
+*~LAlt::Send("{Blind}{vk07}")
+*~RAlt::Send("{Blind}{vk07}")
 
 ; 左 Alt 空打ちで IME を OFF
 LAlt up::
@@ -117,7 +120,7 @@ LAlt up::
     {
         IME_SET(0)
     }
-    Return
+    return
 
 ; 右 Alt 空打ちで IME を ON
 RAlt up::
@@ -125,4 +128,6 @@ RAlt up::
     {
         IME_SET(1)
     }
-    Return
+    return
+
+#HotIf
